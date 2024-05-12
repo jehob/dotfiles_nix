@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = [
+    ./tmux.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jehob";
@@ -79,19 +83,5 @@
       theme = "robbyrussell";
 
     };
-  };
-
-
-  programs.tmux = {
-    enable = true;
-    prefix = "C-a";
-    historyLimit = 50000;
-    escapeTime = 20;
-    plugins = with pkgs;
-      [
-        tmuxPlugins.sensible
-        tmuxPlugins.resurrect
-	tmuxPlugins.nord
-      ];
   };
 }
