@@ -91,6 +91,7 @@
       [
         tmuxPlugins.sensible
         tmuxPlugins.resurrect
+	tmuxPlugins.nord
       ];
   };
 }
