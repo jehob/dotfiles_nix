@@ -72,6 +72,7 @@
      lazygit
      stow
      zsh
+     oh-my-zsh
      tmux
      waybar # bar
      mako # notification manager
@@ -118,6 +119,7 @@
 
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
