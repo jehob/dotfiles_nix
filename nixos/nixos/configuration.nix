@@ -81,6 +81,7 @@
      kitty # terminal emulator for now
      rofi-wayland # window switcher
      firefox-devedition
+     libgcc
   #  wget
 
      (pkgs.waybar.overrideAttrs (oldAttrs: {

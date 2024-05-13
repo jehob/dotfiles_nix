@@ -84,4 +84,9 @@
 
     };
   };
+
+  programs.kitty = {
+    enable = true;
+    extraConfig = "include ~/.config/kitty/nord.conf";
+  };
 }

@@ -5,3 +5,4 @@ stow -R lazygit
 stow -R hypr
 stow -R nvim
 stow -R waybar
+stow -R kitty
