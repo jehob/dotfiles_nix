@@ -81,8 +81,14 @@
      kitty # terminal emulator for now
      rofi-wayland # window switcher
      firefox-devedition
-     libgcc
-  #  wget
+     gcc13
+     zoxide
+     fzf
+     ripgrep
+
+     # maybe this should go into a flake in each project
+     rustc
+     cargo
 
      (pkgs.waybar.overrideAttrs (oldAttrs: {
           mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];

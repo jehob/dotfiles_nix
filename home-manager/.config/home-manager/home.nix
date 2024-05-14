@@ -77,6 +77,7 @@
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
+    initExtra = "eval \"$(zoxide init zsh)\"";
 
     oh-my-zsh = {
       enable = true;
@@ -87,6 +88,6 @@
 
   programs.kitty = {
     enable = true;
-    extraConfig = "include ~/.config/kitty/nord.conf";
+    extraConfig = "include ~/.config/kitty/custom_white.conf";
   };
 }
