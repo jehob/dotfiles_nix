@@ -85,6 +85,7 @@
      zoxide
      fzf
      ripgrep
+     killall
 
      # maybe this should go into a flake in each project
      rustc

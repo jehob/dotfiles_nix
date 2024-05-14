@@ -1,0 +1,21 @@
+/* Workspaces */
+#workspaces {
+    margin: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin: 2px;
+    background-color: transparent;
+    color: #000000;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.active {
+    color: #d11525;
+    border: 2px solid black;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
