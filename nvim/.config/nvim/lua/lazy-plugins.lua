@@ -120,6 +120,11 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  {'rktjmp/lush.nvim'},
+  
+  { dir = '~/.config/nvim/lua/custom/themes/mine_white', lazy = true },
+  
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
