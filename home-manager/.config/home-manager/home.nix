@@ -86,8 +86,5 @@
     };
   };
 
-  programs.kitty = {
-    enable = true;
-    extraConfig = "include ~/.config/kitty/custom_white.conf";
-  };
+  programs.alacritty.enable = true;
 }

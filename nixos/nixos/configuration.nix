@@ -79,6 +79,7 @@
      libnotify # notification deamon
      swww # wallpapear manager
      kitty # terminal emulator for now
+     alacritty # second terminal emulator
      rofi-wayland # window switcher
      firefox-devedition
      gcc13
