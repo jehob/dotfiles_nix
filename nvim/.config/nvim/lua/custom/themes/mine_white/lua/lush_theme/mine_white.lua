@@ -53,6 +53,7 @@ local test_text = hsl(234, 16, 35)
 
 
 local red  = hsl(347, 87, 44) 
+local red2 = red.darken(5)
 local rosewater = hsl(11, 59, 67)
 local teal = hsl(187, 74, 35)
 local blue = hsl(220, 91, 54)
@@ -88,9 +89,9 @@ local theme = lush(function(injected_functions)
     -- CursorColumn   { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine     { bg = background.darken(3) }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     -- Directory      { }, -- Directory names (and other special names in listings)
-    -- DiffAdd        { }, -- Diff mode: Added line |diff.txt|
-    -- DiffChange     { }, -- Diff mode: Changed line |diff.txt|
-    -- DiffDelete     { }, -- Diff mode: Deleted line |diff.txt|
+    DiffAdd        { Normal, fg = green }, -- Diff mode: Added line |diff.txt|
+    DiffChange     { Normal, fg = yellow }, -- Diff mode: Changed line |diff.txt|
+    DiffDelete     { Normal, fg = red}, -- Diff mode: Deleted line |diff.txt|
     -- DiffText       { }, -- Diff mode: Changed text within a changed line |diff.txt|
     -- EndOfBuffer    { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor     { }, -- Cursor in a focused terminal
@@ -99,7 +100,7 @@ local theme = lush(function(injected_functions)
     -- VertSplit      { }, -- Column separating vertically split windows
     -- Folded         { }, -- Line used for closed folds
     -- FoldColumn     { }, -- 'foldcolumn'
-    -- SignColumn     { }, -- Column where |signs| are displayed
+    SignColumn     { Normal }, -- Column where |signs| are displayed
     -- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute     { }, -- |:substitute| replacement text highlighting
     LineNr         { Normal }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -118,7 +119,7 @@ local theme = lush(function(injected_functions)
     -- FloatBorder    { }, -- Border of floating windows.
     -- FloatTitle     { }, -- Title of floating windows.
     -- NormalNC       { }, -- normal text in non-current windows
-    -- Pmenu          { }, -- Popup menu: Normal item.
+    Pmenu          { }, -- Popup menu: Normal item.
     -- PmenuSel       { }, -- Popup menu: Selected item.
     -- PmenuKind      { }, -- Popup menu: Normal item "kind"
     -- PmenuKindSel   { }, -- Popup menu: Selected item "kind"
@@ -134,16 +135,16 @@ local theme = lush(function(injected_functions)
     -- SpellCap       { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal     { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare      { }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-    -- StatusLine     { }, -- Status line of current window
+    StatusLine     { Normal }, -- Status line of current window
     -- StatusLineNC   { }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    -- TabLine        { }, -- Tab pages line, not active tab page label
+    -- TabLine        { fg = background }, -- Tab pages line, not active tab page label
     -- TabLineFill    { }, -- Tab pages line, where there are no labels
     -- TabLineSel     { }, -- Tab pages line, active tab page label
     -- Title          { }, -- Titles for output from ":set all", ":autocmd" etc.
     -- Visual         { }, -- Visual mode selection
     -- VisualNOS      { }, -- Visual mode selection when vim is "Not Owning the Selection".
     -- WarningMsg     { }, -- Warning messages
-    -- Whitespace     { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+  Whitespace     { Normal, fg = background.darken(3) }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- Winseparator   { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     -- WildMenu       { }, -- Current match in 'wildmenu' completion
     -- WinBar         { }, -- Window bar of current window
@@ -160,30 +161,30 @@ local theme = lush(function(injected_functions)
     Comment        { Normal, fg = Normal.fg.lighten(50) }, -- Any comment
 
     -- Constant       { }, -- (*) Any constant
-    -- String         { }, --   A string constant: "this is a string"
+    String         { Normal, fg = green }, --   A string constant: "this is a string"
     -- Character      { }, --   A character constant: 'c', '\n'
     -- Number         { }, --   A number constant: 234, 0xff
     -- Boolean        { }, --   A boolean constant: TRUE, false
     -- Float          { }, --   A floating point constant: 2.3e10
 
-    Identifier     { fg = teal }, -- (*) Any variable name
+    Identifier     { Normal }, -- (*) Any variable name
     Function       { Normal, fg = rosewater }, --   Function name (also: methods for classes)
 
-    Statement      { Normal }, -- (*) Any statement
-    Conditional    { Normal, fg = blue }, --   if, then, else, endif, switch, etc.
+    Statement      { Normal, fg = red }, -- (*) Any statement
+    Conditional    { Normal, fg = red2 }, --   if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --   case, default, etc.
     -- Operator       { }, --   "sizeof", "+", "*", etc.
-    Keyword        { Normal, fg = text2 }, --   any other keyword
+    Keyword        { Normal, fg = teal }, --   any other keyword
     -- Exception      { }, --   try, catch, throw
 
     -- PreProc        { }, -- (*) Generic Preprocessor
     -- Include        { }, --   Preprocessor #include
     -- Define         { }, --   Preprocessor #define
-     Macro          { fg = peach }, --   Same as Define
+    Macro          { fg = peach }, --   Same as Define
     -- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-    Type           { Normal, fg= lavender}, -- (*) int, long, char, etc.
+    Type           { Normal, fg = red2}, -- (*) int, long, char, etc.
     -- StorageClass   { }, --   static, register, volatile, etc.
     Structure      { Normal, fg = red }, --   struct, union, enum, etc.
     -- Typedef        { }, --   A typedef
