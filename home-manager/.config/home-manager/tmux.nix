@@ -13,17 +13,12 @@
         sensible
         resurrect
         yank
-        {
-          plugin = dracula;
-          extraConfig = ''
-            set -g @dracula-plugins "ssh-session"
-            set -g @dracula-refresh-rate 10
-            set -g @dracula-show-left-icon session
-          '';
-	}
       ];
     extraConfig = ''
       set -g mouse on
+      set-window-option -g window-status-current-style fg=#0a0c10,bg=#e60000
+      set-option -g status-style fg=#e60000,bg=#0a0c10
+      set-option -g status-right ""
     '';
   };
 }
