@@ -17,13 +17,3 @@ blue = '#325CC0'
 magenta = '#7A3E9D'
 cyan = '#0083B2'
 white = '#BBBBBB'
-
-# [colors.bright]
-# black = '#777777'
-# red = '#F05050'
-# green = '#60CB00'
-# yellow = '#FFBC5D'
-# blue = '#007ACC'
-# magenta = '#E64CE6'
-# cyan = '#00AACB'
-# white = '#FFFFFF'

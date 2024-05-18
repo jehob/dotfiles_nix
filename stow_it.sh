@@ -6,3 +6,4 @@ stow -R hypr
 stow -R nvim
 stow -R waybar
 stow -R alacritty
+stow -R rofi

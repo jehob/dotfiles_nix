@@ -1,19 +1,25 @@
 /* Workspaces */
+window#waybar {
+    background-color: #000000;
+    color: #bbbbbb;
+}
+
 #workspaces {
-    margin: 0 5px;
+    margin: 4 5px;
 }
 
 #workspaces button {
     padding: 0 5px;
     margin: 2px;
-    background-color: transparent;
-    color: #000000;
+    background-color: #000000;
+    color: #ffffff;
     border-bottom: 3px solid transparent;
 }
 
 #workspaces button.active {
-    color: #ff0400;
-    border: 2px solid black;
+    color: #000000;
+    background-color: #e60000;
+    border-radius: 10px;
 }
 
 #workspaces button.urgent {

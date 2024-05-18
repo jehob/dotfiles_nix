@@ -50,6 +50,6 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
-vim.cmd('colorscheme mine_white')
+vim.cmd('colorscheme github_dark_high_contrast')
 
 -- vim: ts=2 sts=2 sw=2 et

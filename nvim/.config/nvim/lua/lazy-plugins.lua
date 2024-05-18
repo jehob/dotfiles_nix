@@ -121,6 +121,7 @@ require('lazy').setup({
   },
 
   {'rktjmp/lush.nvim'},
+  { 'projekt0n/github-nvim-theme' },
   
   { dir = '~/.config/nvim/lua/custom/themes/mine_white', lazy = true },
   
