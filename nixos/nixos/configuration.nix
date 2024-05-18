@@ -91,6 +91,7 @@
      # maybe this should go into a flake in each project
      rustc
      cargo
+     rustup
 
      (pkgs.waybar.overrideAttrs (oldAttrs: {
           mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
