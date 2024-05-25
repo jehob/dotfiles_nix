@@ -120,3 +120,25 @@ mason_lspconfig.setup_handlers {
 }
 
 -- vim: ts=2 sts=2 sw=2 et
+
+local lspconfig = require('lspconfig')
+local rust_analyzer_path = vim.fn.trim(vim.fn.system("which rust-analyzer"))
+
+lspconfig.rust_analyzer.setup({
+  cmd = { rust_analyzer_path },
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
+})
+
+-- Set rustfmt as the formatter for Rust files
+local rusty_vim_fmt = function()
+  vim.lsp.buf.formatting_sync(nil, 200)
+end
