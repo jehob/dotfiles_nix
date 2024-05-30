@@ -87,6 +87,8 @@
      fzf
      ripgrep
      killall
+     spotifyd
+     spotify-tui
 
      # maybe this should go into a flake in each project
      cargo
