@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 
@@ -78,12 +78,12 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     initExtra = "eval \"$(zoxide init zsh)\"";
+  };
 
-    oh-my-zsh = {
+  programs.oh-my-posh = {
       enable = true;
-      theme = "robbyrussell";
-
-    };
+      enableZshIntegration = true;
+      settings = builtins.fromJSON (lib.fileContents "${config.home.homeDirectory}/.config/oh-my-posh/config_org.json");
   };
 
   programs.alacritty.enable = true;

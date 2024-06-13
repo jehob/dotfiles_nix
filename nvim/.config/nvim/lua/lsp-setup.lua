@@ -124,8 +124,21 @@ mason_lspconfig.setup_handlers {
 local lspconfig = require('lspconfig')
 local rust_analyzer_path = vim.fn.trim(vim.fn.system("which rust-analyzer"))
 
+-- Define the on_attach function
+local on_rust_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Key bindings for rust-analyzer
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', bufopts)
+  -- Add other key bindings for rust-analyzer features as needed
+end
+
+
 lspconfig.rust_analyzer.setup({
   cmd = { rust_analyzer_path },
+  on_attach = on_rust_attach,
   settings = {
     ["rust-analyzer"] = {
       cargo = {
