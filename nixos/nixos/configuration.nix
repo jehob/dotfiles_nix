@@ -95,6 +95,8 @@
 
      floorp
      # maybe this should go into a flake in each project
+     jetbrains-toolbox
+     rustup
      cargo
 
      (pkgs.waybar.overrideAttrs (oldAttrs: {
